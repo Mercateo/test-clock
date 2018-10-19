@@ -31,7 +31,7 @@ see com.mercateo.test.clock.example.MyCacheTest.testGet_cache_expired_with_TestC
 ```xml
     <dependency>
         <groupId>com.mercateo</groupId>
-        <artifactId>test.clock</artifactId>
+        <artifactId>test-clock</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <scope>test</scope>
     </dependency>

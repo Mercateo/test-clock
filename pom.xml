@@ -3,19 +3,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mercateo</groupId>
-    <artifactId>test.clock</artifactId>
+    <artifactId>test-clock</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>test.clock</name>
-    <url>https://github.com/StephanPraetsch/test.clock</url>
+    <name>test-clock</name>
+    <url>https://github.com/StephanPraetsch/test-clock</url>
     <organization>
         <name>Mercateo AG</name>
         <url>http://www.mercateo.com</url>
     </organization>
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/Mercateo/test.clock/issues</url>
+        <url>https://github.com/Mercateo/test-clock/issues</url>
     </issueManagement>
     <distributionManagement>
         <snapshotRepository>
@@ -34,9 +34,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git@github.com:Mercateo/test.clock.git</connection>
-        <developerConnection>scm:git:git@github.com:Mercateo/test.clock.git</developerConnection>
-        <url>https://github.com/Mercateo/test.clock.git</url>
+        <connection>scm:git:git@github.com:Mercateo/test-clock.git</connection>
+        <developerConnection>scm:git:git@github.com:Mercateo/test-clock.git</developerConnection>
+        <url>https://github.com/Mercateo/test-clock.git</url>
         <tag>HEAD</tag>
     </scm>
     <developers>
