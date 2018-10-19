@@ -9,6 +9,45 @@
 
     <name>test.clock</name>
     <url>https://github.com/StephanPraetsch/test.clock</url>
+    <organization>
+        <name>Mercateo AG</name>
+        <url>http://www.mercateo.com</url>
+    </organization>
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/Mercateo/test.clock/issues</url>
+    </issueManagement>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:git@github.com:Mercateo/test.clock.git</connection>
+        <developerConnection>scm:git:git@github.com:Mercateo/test.clock.git</developerConnection>
+        <url>https://github.com/Mercateo/test.clock.git</url>
+        <tag>HEAD</tag>
+    </scm>
+    <developers>
+        <developer>
+            <id>StephanPraetsch</id>
+            <name>Stephan Prätsch</name>
+            <email>stephan.praetsch@mercateo.com</email>
+            <url>http://www.mercateo.com</url>
+            <organization>Mercateo AG</organization>
+            <organizationUrl>http://www.mercateo.com</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
