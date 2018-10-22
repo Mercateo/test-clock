@@ -3,7 +3,7 @@
 
     <groupId>com.mercateo</groupId>
     <artifactId>test-clock</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>test-clock</name>
@@ -36,7 +36,7 @@
         <connection>scm:git:git@github.com:Mercateo/test-clock.git</connection>
         <developerConnection>scm:git:git@github.com:Mercateo/test-clock.git</developerConnection>
         <url>https://github.com/Mercateo/test-clock.git</url>
-        <tag>test-clock-0.0.2</tag>
+        <tag>HEAD</tag>
     </scm>
     <developers>
         <developer>
