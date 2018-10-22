@@ -3,7 +3,7 @@
 
     <groupId>com.mercateo</groupId>
     <artifactId>test-clock</artifactId>
-    <version>mvn release:perform</version>
+    <version>0.0.7</version>
     <packaging>jar</packaging>
 
     <name>test-clock</name>
