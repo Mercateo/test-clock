@@ -32,12 +32,12 @@ public class TestClock extends Clock {
         return clock.instant();
     }
 
-    public void fastForward(@NonNull TemporalAmount amountToAdd) {
-        clock = Clock.fixed(clock.instant().plus(amountToAdd), clock.getZone());
+    public void fastForward(@NonNull TemporalAmount temporalAmount) {
+        clock = Clock.fixed(clock.instant().plus(temporalAmount), clock.getZone());
     }
 
-    public void rewind(@NonNull TemporalAmount amountToAdd) {
-        clock = Clock.fixed(clock.instant().minus(amountToAdd), clock.getZone());
+    public void rewind(@NonNull TemporalAmount temporalAmount) {
+        clock = Clock.fixed(clock.instant().minus(temporalAmount), clock.getZone());
     }
 
     public void set(@NonNull Instant instant) {
