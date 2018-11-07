@@ -1,7 +1,6 @@
 package com.mercateo.test.clock;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.common.testing.NullPointerTester;
 
@@ -11,17 +10,11 @@ import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 
-import org.junit.Before;
 import org.junit.Test;
 
 public class TestClockTest {
 
     OffsetDateTime seed = OffsetDateTime.of(2018, 10, 19, 9, 27, 55, 0, ZoneOffset.UTC);
-
-    @Before
-    public void init() {
-        initMocks(this);
-    }
 
     @Test
     public void testNullContracts() {
