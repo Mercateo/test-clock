@@ -1,4 +1,4 @@
-package com.mercateo.test.clock.example;
+package com.mercateo.test.clock.example.cache;
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -14,6 +14,7 @@ import java.time.ZoneOffset;
 import java.util.function.Supplier;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mock;
 
@@ -51,6 +52,7 @@ public class MyCacheTest {
     }
 
     @Test
+    @Ignore("this is how NOT to do it")
     public void testGet_cache_expired() throws Exception {
 
         // Given

@@ -1,4 +1,4 @@
-package com.mercateo.test.clock.example;
+package com.mercateo.test.clock.example.cache;
 
 import java.util.concurrent.Callable;
 

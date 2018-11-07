@@ -1,8 +1,33 @@
 # TestClock
 A windable clock for tests.
 
-# What for?
-In case of time-dependent behavior you might want to test this behavior. How do you test it? 
+# Why using Clock at all?
+You might ask why to use [java.time.Clock](https://docs.oracle.com/javase/8/docs/api/java/time/Clock.html). Why not `System.currentTimeMillis()` or `TimeZone.getDefault()` or `new Date()`? I'd like to cite the documentation from oracle
+> Use of a Clock is optional. All key date-time classes also have a now() factory method that uses the system clock in the default time zone. The primary purpose of this abstraction is to allow alternate clocks to be plugged in as and when required. Applications use an object to obtain the current time rather than a static method. **This can simplify testing.** 
+
+### in example
+You'd have a very simple watch
+```java
+public class MyWatch {
+    public String now() {
+        return OffsetDateTime.now().toString();
+    }
+}
+```
+Now you want to test it's behavior: *Does it return the current time?* How? The following approach to test this watch works for exactly one point in time
+```java
+    @Test
+    public void testMyWatch() {
+        MyWatch myWatch = new MyWatch();
+        String now = myWatch.now();
+        assertThat(now).isEqualTo("2018-11-07T10:12:12.414+01:00");
+    }
+}
+```
+**That watch isn't testable.** But if you use *Clock* it becomes testable, see *com.mercateo.test.clock.example.timer.MyWatchTest*
+
+# Why using this *TestClock*?
+In case of **over-time behavior** you might want to test this behavior as well. How do you test it? 
 Will you call `Thread.sleep(...)` in your test?
 ```java
 doSomething();
@@ -24,7 +49,7 @@ clock.fastForward(Duration.ofSeconds(5));
 checkSomething();
 ```
 This test will not idle for 5 seconds but will only take as long as your business code runs.
-see com.mercateo.test.clock.example.MyCacheTest.testGet_cache_expired_with_TestClock()
+see *com.mercateo.test.clock.example.MyCacheTest.testGet_cache_expired_with_TestClock()*
 
 # Howto use
 

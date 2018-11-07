@@ -24,6 +24,7 @@ public class TestClockTest {
 
         // Given
         TestClock uut = TestClock.fixed(seed);
+
         // When
         uut.fastForward(Duration.ofSeconds(3));
 
@@ -54,7 +55,7 @@ public class TestClockTest {
         TestClock uut = TestClock.fixed(seed);
 
         // When
-        Thread.sleep(1111);
+        Thread.sleep(99);
 
         // Then
         assertThat(OffsetDateTime.now(uut)).isEqualTo(seed);
