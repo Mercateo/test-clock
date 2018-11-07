@@ -3,6 +3,9 @@ package com.mercateo.test.clock;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.common.testing.NullPointerTester;
+
+import java.time.Clock;
 import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
@@ -17,6 +20,15 @@ public class TestClockTest {
     @Before
     public void init() {
         initMocks(this);
+    }
+
+    @Test
+    public void testNullContracts() {
+        TestClock uut = TestClock.fixed(seed);
+        NullPointerTester tester = new NullPointerTester();
+        tester.testAllPublicInstanceMethods(uut);
+        tester.testAllPublicConstructors(uut.getClass());
+        tester.testAllPublicStaticMethods(uut.getClass());
     }
 
     @Test
@@ -59,6 +71,22 @@ public class TestClockTest {
 
         // Then
         assertThat(OffsetDateTime.now(uut)).isEqualTo(seed);
+
+    }
+
+    @Test
+    public void testWithZone() throws Exception {
+
+        // Given
+        TestClock uut = TestClock.fixed(seed);
+
+        // When
+        Clock copy = uut.withZone(ZoneOffset.ofHours(1));
+
+        // Then
+        assertThat(copy).isNotSameAs(uut);
+        assertThat(copy.instant()).isEqualTo(uut.instant());
+        assertThat(copy.getZone()).isEqualTo(ZoneOffset.ofHours(1));
 
     }
 

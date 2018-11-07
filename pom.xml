@@ -181,6 +181,12 @@
             <version>3.10.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava-testlib</artifactId>
+            <version>25.0-jre</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>

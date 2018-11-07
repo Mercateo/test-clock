@@ -15,7 +15,7 @@ public class TestClock extends Clock {
 
     private Instant instant;
 
-    private ZoneId zone;
+    private final ZoneId zone;
 
     @Override
     public ZoneId getZone() {
@@ -23,9 +23,8 @@ public class TestClock extends Clock {
     }
 
     @Override
-    public Clock withZone(ZoneId zone) {
-        this.zone = zone;
-        return this;
+    public Clock withZone(@NonNull ZoneId zone) {
+        return new TestClock(instant, zone);
     }
 
     @Override
