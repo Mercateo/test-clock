@@ -22,7 +22,6 @@ Now you want to test it's behavior: *Does it return the current time?* How? The 
         String now = myWatch.now();
         assertThat(now).isEqualTo("2018-11-07T10:12:12.414+01:00");
     }
-}
 ```
 **That watch isn't testable.** But if you use *Clock* it becomes testable, see *com.mercateo.test.clock.example.timer.MyWatchTest*
 
@@ -34,7 +33,7 @@ doSomething();
 Thread.sleep(5000);
 checkSomething();
 ```
-see com.mercateo.test.clock.example.MyCacheTest.testGet_cache_expired()
+see *com.mercateo.test.clock.example.MyCacheTest.testGet_cache_expired()*
 This test will need at least 5 seconds to be finished just because of idling 5 seconds.
 
 
@@ -52,7 +51,7 @@ This test will not idle for 5 seconds but will only take as long as your busines
 see *com.mercateo.test.clock.example.MyCacheTest.testGet_cache_expired_with_TestClock()*
 
 # Howto use
-
+add dependency to your pom.xml
 ```xml
     <dependency>
         <groupId>com.mercateo</groupId>
@@ -61,7 +60,7 @@ see *com.mercateo.test.clock.example.MyCacheTest.testGet_cache_expired_with_Test
         <scope>test</scope>
     </dependency>
 ```
-
+use *TestClock* in your test
 ```java
     OffsetDateTime seed = OffsetDateTime.of(2018, 10, 19, 9, 27, 55, 0, ZoneOffset.UTC);
     TestClock clock = TestClock.fixed(seed)
