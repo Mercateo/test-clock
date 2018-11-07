@@ -78,7 +78,7 @@ public class MyCacheTest {
 
         // When
         myCache.get();
-        clock.fastForward(expireAfter.plusSeconds(1));
+        clock.fastForward(expireAfter.plusMillis(1));
         myCache.get();
 
         // Then
