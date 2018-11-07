@@ -8,6 +8,7 @@ import com.google.common.testing.NullPointerTester;
 import java.time.Clock;
 import java.time.Duration;
 import java.time.OffsetDateTime;
+import java.time.ZoneId;
 import java.time.ZoneOffset;
 
 import org.junit.Before;
@@ -26,6 +27,7 @@ public class TestClockTest {
     public void testNullContracts() {
         TestClock uut = TestClock.fixed(seed);
         NullPointerTester tester = new NullPointerTester();
+        tester.setDefault(ZoneId.class, seed.getOffset());
         tester.testAllPublicInstanceMethods(uut);
         tester.testAllPublicConstructors(uut.getClass());
         tester.testAllPublicStaticMethods(uut.getClass());

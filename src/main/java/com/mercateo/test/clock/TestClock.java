@@ -44,8 +44,12 @@ public class TestClock extends Clock {
         this.instant = instant;
     }
 
+    public static TestClock fixed(@NonNull Instant instant, @NonNull ZoneId zone) {
+        return new TestClock(instant, zone);
+    }
+
     public static TestClock fixed(@NonNull OffsetDateTime odt) {
-        return new TestClock(odt.toInstant(), odt.getOffset());
+        return fixed(odt.toInstant(), odt.getOffset());
     }
 
 }
