@@ -6,7 +6,7 @@ You might ask why to use [java.time.Clock](https://docs.oracle.com/javase/8/docs
 > Use of a Clock is optional. All key date-time classes also have a now() factory method that uses the system clock in the default time zone. The primary purpose of this abstraction is to allow alternate clocks to be plugged in as and when required. Applications use an object to obtain the current time rather than a static method. **This can simplify testing.** 
 
 ### in example
-You'd have a very simple watch
+You have a very simple watch
 ```java
 public class MyWatch {
     public String now() {
