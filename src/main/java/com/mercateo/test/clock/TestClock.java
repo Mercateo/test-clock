@@ -13,40 +13,40 @@ import lombok.NonNull;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class TestClock extends Clock {
 
-    @NonNull
-    private Clock clock;
+    private Instant instant;
+
+    private ZoneId zone;
 
     @Override
     public ZoneId getZone() {
-        return clock.getZone();
+        return zone;
     }
 
     @Override
     public Clock withZone(ZoneId zone) {
-        clock = clock.withZone(zone);
+        this.zone = zone;
         return this;
     }
 
     @Override
     public Instant instant() {
-        return clock.instant();
+        return instant;
     }
 
     public void fastForward(@NonNull TemporalAmount temporalAmount) {
-        clock = Clock.fixed(clock.instant().plus(temporalAmount), clock.getZone());
+        set(instant().plus(temporalAmount));
     }
 
     public void rewind(@NonNull TemporalAmount temporalAmount) {
-        clock = Clock.fixed(clock.instant().minus(temporalAmount), clock.getZone());
+        set(instant().minus(temporalAmount));
     }
 
     public void set(@NonNull Instant instant) {
-        clock = Clock.fixed(instant, clock.getZone());
+        this.instant = instant;
     }
 
     public static TestClock fixed(@NonNull OffsetDateTime odt) {
-        Clock clock = Clock.fixed(odt.toInstant(), odt.getOffset());
-        return new TestClock(clock);
+        return new TestClock(odt.toInstant(), odt.getOffset());
     }
 
 }
