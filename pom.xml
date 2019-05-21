@@ -3,7 +3,7 @@
 
     <groupId>com.mercateo</groupId>
     <artifactId>test-clock</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>test-clock</name>
