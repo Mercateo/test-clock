@@ -56,7 +56,7 @@ add dependency to your pom.xml
     <dependency>
         <groupId>com.mercateo</groupId>
         <artifactId>test-clock</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
         <scope>test</scope>
     </dependency>
 ```
